@@ -1,10 +1,13 @@
 package com.softuni.workshop.model.entity;
 
 import com.softuni.workshop.model.enums.LevelEnum;
+
 import jakarta.persistence.*;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+
 import lombok.*;
 
 import java.util.Collections;

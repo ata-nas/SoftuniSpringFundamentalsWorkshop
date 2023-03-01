@@ -1,7 +1,9 @@
 package com.softuni.workshop.model.entity;
 
 import com.softuni.workshop.model.enums.RoleEnum;
+
 import jakarta.persistence.*;
+
 import lombok.*;
 
 @Getter

@@ -1,10 +1,11 @@
 package com.softuni.workshop.model.entity;
 
 import com.softuni.workshop.model.enums.LevelEnum;
+
 import jakarta.persistence.*;
+
 import lombok.*;
 
-import javax.xml.stream.events.Comment;
 import java.util.Set;
 
 @Getter
@@ -41,14 +42,14 @@ public class RouteEntity extends BaseEntity {
     private String videoURL;
 
     @OneToMany(targetEntity = CommentEntity.class, mappedBy = "route", orphanRemoval = true)
-    private Set<Comment> comments;
+    private Set<CommentEntity> comments;
 
     @OneToMany(
             targetEntity = PictureEntity.class,
             mappedBy = "route", orphanRemoval = true,
             fetch = FetchType.EAGER
     )
-    private Set<Comment> pictures;
+    private Set<PictureEntity> pictures;
 
     @ManyToMany
     private Set<CategoryEntity> categories;

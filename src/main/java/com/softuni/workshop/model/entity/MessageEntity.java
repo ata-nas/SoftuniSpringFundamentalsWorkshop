@@ -1,6 +1,7 @@
 package com.softuni.workshop.model.entity;
 
 import jakarta.persistence.*;
+
 import lombok.*;
 
 import java.time.LocalDateTime;

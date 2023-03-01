@@ -2,6 +2,7 @@ package com.softuni.workshop.model.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.PastOrPresent;
+
 import lombok.*;
 
 import java.time.LocalDateTime;
