@@ -37,7 +37,7 @@ public class UserEntity extends BaseEntity {
     @Size(min = 2)
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = true, unique = true)
     @Email
     private String email;
 

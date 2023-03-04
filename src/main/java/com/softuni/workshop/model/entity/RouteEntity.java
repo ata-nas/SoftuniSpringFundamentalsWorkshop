@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 
 import lombok.*;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.SortedSet;
 
 @Getter
 @Setter
@@ -22,7 +24,10 @@ import java.util.Set;
 )
 public class RouteEntity extends BaseEntity {
 
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(
+            name = "gpx_coordinates",
+            columnDefinition = "LONGTEXT"
+    )
     private String coordinates;
 
     @Column
@@ -41,14 +46,21 @@ public class RouteEntity extends BaseEntity {
     @Column(name = "video_url")
     private String videoURL;
 
-    @OneToMany(targetEntity = CommentEntity.class, mappedBy = "route", orphanRemoval = true)
+    @OneToMany(
+            targetEntity = CommentEntity.class,
+            mappedBy = "route",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
     private Set<CommentEntity> comments;
 
     @OneToMany(
             targetEntity = PictureEntity.class,
-            mappedBy = "route", orphanRemoval = true,
-            fetch = FetchType.EAGER
+            mappedBy = "route",
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
     )
+    @OrderBy
     private Set<PictureEntity> pictures;
 
     @ManyToMany
